@@ -29,11 +29,46 @@
             </mat-form-field>
           </div>
         </div>
+        <div class="row">
+            <div class="col-xs">
+                <mat-form-field>
+                    <mat-label>Categories</mat-label>
+                    <mat-select
+                        placeholder="Categoría"
+                        formControlName="categoryId"
+                    >
+                        <mat-option
+                            *ngFor="let category of categories"
+                            [value]="category.id"
+                        >
+                            {{ category.name }}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs">
+                <mat-form-field>
+                    <mat-label>States</mat-label>
+                    <mat-select
+                        placeholder="State"
+                        formControlName="state"
+                    >
+                        <mat-option
+                            *ngFor="let state of states"
+                            [value]="state"
+                        >
+                            {{ state.name }}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
       </mat-card-content>
       <mat-card-actions>
         <button [disabled]="form.invalid" mat-raised-button type="submit">Guardar</button>
       </mat-card-actions>
     </mat-card>
-    
+
   </form>
-  
